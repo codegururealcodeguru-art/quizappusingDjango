@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Quiz App Using Python Django - Project Mirror</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --code-bg: #f4f4f4;
+            --code-border: #ddd;
+            --text-color: #333;
+            --bg-color: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--bg-color);
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Code Block Styling */
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.95em;
+            border: 1px solid var(--code-border);
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+
+        .inline-code {
+            background-color: var(--code-bg);
+            color: #d63384;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .step {
+            background-color: #eef7fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #777;
+            padding-bottom: 20px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container"> 
+
+        <h1  style="color: blue;">Quiz App Using Python Django</h1> <img src="img.jpg" alt="Image" style="width:300px; height:auto;">
+
+
+
+        <h2>Introduction</h2>
+        <p>The <strong>Django Quiz App</strong> allows users to take quizzes across various subjects, view their results, and track their progress. It features a robust <strong>Admin Panel</strong> where administrators can add questions, define options, and set correct answers.</p>
+
+        <h3>Key Features:</h3>
+        <ul>
+            <li><strong>User Interface:</strong> Users select a topic, answer multiple-choice questions, and receive instant scoring.</li>
+            <li><strong>Admin Control:</strong> Admins manage questions and answers via the Django admin interface.</li>
+            <li><strong>Data Storage:</strong> The <span class="inline-code">Question</span> model stores the question text, four options (A, B, C, D), and the correct answer.</li>
+            <li><strong>Logic:</strong> Views handle the scoring logic by comparing user submissions against the database.</li>
+            <li><strong>Educational Use:</strong> Ideal for training, interviews, or educational testing. It covers Django fundamentals like dynamic forms, session storage, and model relationships.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Required Modules</h2>
+        <p>To build and run this project, you need the following:</p>
+        <ul>
+            <li><strong>Python 3.8+</strong>: Ensure Python is installed.</li>
+            <li><strong>Django 3.x or 4.x</strong>: The web framework used for the project.</li>
+            <li><strong>pip</strong>: Python package manager.</li>
+        </ul>
+        <p><strong>Installation Command:</strong></p>
+        <pre><code>pip install django</code></pre>
+
+        <hr>
+
+        <h2>How to Run the Code</h2>
+        <p>Follow these steps to launch the application locally:</p>
+
+        <div class="step">
+            <span class="step-title">✅ STEP 1: Download or Clone the Project</span>
+            <p><strong>Option A (ZIP):</strong> Extract the project folder and open it in your code editor (e.g., VS Code).</p>
+            <p><strong>Option B (Git):</strong></p>
+            <pre><code>git clone https://github.com/username/repository-name.git
+cd repository-name</code></pre>
+        </div>
+
+        <div class="step">
+            <span class="step-title">✅ STEP 2: Set Up Virtual Environment</span>
+            <p>Isolate your project dependencies by creating a virtual environment.</p>
+            <pre><code># Create environment
+python -m venv venv
+
+# Activate environment
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate</code></pre>
+        </div>
+
+        <div class="step">
+            <span class="step-title">✅ STEP 3: Install Requirements</span>
+            <pre><code>pip install -r requirements.txt
+# If no file exists, manually install Django:
+pip install django</code></pre>
+        </div>
+
+        <div class="step">
+            <span class="step-title">✅ STEP 4: Run Migrations</span>
+            <pre><code>python manage.py makemigrations
+python manage.py migrate</code></pre>
+        </div>
+
+        <div class="step">
+            <span class="step-title">✅ STEP 5: Create Superuser</span>
+            <pre><code>python manage.py createsuperuser</code></pre>
+            <p><em>(Follow the prompts to set a username and password)</em></p>
+        </div>
+
+        <div class="step">
+            <span class="step-title">✅ STEP 6: Run the Server</span>
+            <pre><code>python manage.py runserver</code></pre>
+            <ul>
+                <li><strong>App:</strong> <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a></li>
+                <li><strong>Admin Panel:</strong> <a href="http://127.0.0.1:8000/admin" target="_blank">http://127.0.0.1:8000/admin</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Code Explanation & Source</h2>
+
+        <h3>1. Model Definition (<span class="inline-code">models.py</span>)</h3>
+        <p>This model stores the question, four options, and the correct answer.</p>
+        <pre><code>from django.db import models
+
+class Question(models.Model):
+    question = models.CharField(max_length=500)
+    option1 = models.CharField(max_length=200)
+    option2 = models.CharField(max_length=200)
+    option3 = models.CharField(max_length=200)
+    option4 = models.CharField(max_length=200)
+    answer = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.question</code></pre>
+
+        <h3>2. Quiz Logic (<span class="inline-code">views.py</span>)</h3>
+        <p>The <span class="inline-code">index</span> view fetches all questions. When the form is submitted (POST), it checks the selected options against the stored correct answers to calculate the score.</p>
+        <pre><code>from django.shortcuts import render
+from .models import Question
+
+def index(request):
+    questions = Question.objects.all()
+    if request.method == "POST":
+        score = 0
+        for q in questions:
+            selected = request.POST.get(str(q.id))
+            if selected == q.answer:
+                score += 1
+        return render(request, 'result.html', {'score': score, 'total': len(questions)})
+    
+    return render(request, 'index.html', {'questions': questions})</code></pre>
+
+        <h3>3. Quiz Interface (<span class="inline-code">index.html</span>)</h3>
+        <p>This template loops through the questions and creates a form with radio buttons for the options.</p>
+        <pre><code>&lt;form method="POST"&gt;
+    {% csrf_token %}
+    {% for q in questions %}
+        &lt;p&gt;{{ q.question }}&lt;/p&gt;
+        &lt;input type="radio" name="{{ q.id }}" value="{{ q.option1 }}"&gt; {{ q.option1 }}&lt;br&gt;
+        &lt;input type="radio" name="{{ q.id }}" value="{{ q.option2 }}"&gt; {{ q.option2 }}&lt;br&gt;
+        &lt;input type="radio" name="{{ q.id }}" value="{{ q.option3 }}"&gt; {{ q.option3 }}&lt;br&gt;
+        &lt;input type="radio" name="{{ q.id }}" value="{{ q.option4 }}"&gt; {{ q.option4 }}&lt;br&gt;
+    {% endfor %}
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+        <h3>4. Score Display (<span class="inline-code">result.html</span>)</h3>
+        <p>Displays the final score after the quiz is submitted.</p>
+        <pre><code>&lt;h2&gt;Your Score: {{ score }}/{{ total }}&lt;/h2&gt;</code></pre>
+        
+        <footer>
+            <p> created by @RealCodeGuru
+ Projects.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
